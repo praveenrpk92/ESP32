@@ -82,7 +82,7 @@ void wifi_connect(struct wifi_credentials *wifi_cred)
 {
 
       
-      ESP_LOGI(TAG,"Connecting...\n");
+      ESP_LOGI(TAG,"Connecting to WiFi...\n");
       wifi_config_t wifi_config =
       {
           .sta = {
@@ -91,7 +91,6 @@ void wifi_connect(struct wifi_credentials *wifi_cred)
               }};
       memcpy(wifi_config.sta.ssid,wifi_cred->ussid,32);
       memcpy(wifi_config.sta.password,wifi_cred->upwd,50);
-      //printf("LOG:%s--%s\n",wifi_config.sta.ssid,wifi_config.sta.password);
       ESP_ERROR_CHECK(esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_config));
       ESP_ERROR_CHECK(esp_wifi_start());
       

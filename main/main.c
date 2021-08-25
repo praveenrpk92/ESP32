@@ -74,8 +74,6 @@ else
      {
         memcpy(wifi_cred->upwd, ctxt->om->om_data, ctxt->om->om_len);
         wifi_cred->upwd[(ctxt->om->om_len)]='\0';
-        //printf("%s;%s\n",wifi_cred->ussid,wifi_cred->upwd);
-        //printf("strlen->%d;%d\n",strlen((const char *)wifi_cred->ussid),strlen((const char *)wifi_cred->upwd));
         xEventGroupSetBits(mq_eventgroup,PWD_UPDATED);
         
      }
@@ -84,7 +82,6 @@ else
         
         memcpy(outbuff, ctxt->om->om_data, ctxt->om->om_len);
         outbuff[(ctxt->om->om_len)]='\0';
-        printf("outmsg:%s\n",outbuff);
         xEventGroupSetBits(mq_eventgroup,OUTM_UPDATED);
      }
 
@@ -189,11 +186,7 @@ void host_task(void *param)
 
 void app_main(void)
 {
-   
-    
-   // outmptr=pvPortMalloc(sizeof(struct message));
-   // memset(outmptr,0x00,sizeof(struct message));
-    
+          
     wifi_cred=pvPortMalloc(sizeof(struct wifi_credentials));
     memset(wifi_cred,0x00,sizeof(struct wifi_credentials));
     

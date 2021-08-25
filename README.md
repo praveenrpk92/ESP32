@@ -1,13 +1,13 @@
 # mDNS in Local Network & MQTT
 
-Device Used: ESP WROOM 32 MCU Module
+Device : ESP WROOM 32
 
 Basic Flow Of Program:
 1) Starts the BLE Server 
 2) Waits for WiFi SSID & Password to be input in respective UUIDs.
 3) Starts WiFi connection.
 4) Starts mDNS service.
-5) Connects to MQTT broker on WiFi connect & awaits messages from BLE client to be published.
+5) Connects to MQTT broker on WiFi connect & awaits messages sent from BLE client to be published.
 
 
 Usage: 
