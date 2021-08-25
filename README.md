@@ -32,6 +32,6 @@ Usage:
 
 Firmware can be flashed using esptool
 
-esptool.py --port COM4 write_flash -fm dio -fs 32m 0x00000 BLE-MULTICAST-ESP32.bin
+esptool.py --port COM4 write_flash -fm dio -fs 32m 0x10000 BLE-MULTICAST-ESP32.bin
               
 
