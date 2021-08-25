@@ -30,3 +30,8 @@ Usage:
 3) MQTT Broker URI    : broker.hivemq.com:1883 
                Topic  : channels/1485222/publish/fields/field1
 
+Firmware can be flashed using esptool
+
+esptool.py --port COM4 write_flash -fm dio -fs 32m 0x00000 BLE-MULTICAST-ESP32.bin
+              
+
